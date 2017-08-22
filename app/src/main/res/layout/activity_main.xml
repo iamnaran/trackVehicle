@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="30dp"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/textGps"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="Gps Status:" />
+
+                <TextView
+                    android:id="@+id/gps_status"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:layout_toRightOf="@+id/textGps"/>
+
+
+                <TextView
+                    android:id="@+id/textNetwork"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/gps_status"
+                    android:text="Network Status:" />
+
+                <TextView
+                    android:id="@+id/network_status"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:textSize="30sp"
+                    android:layout_below="@id/gps_status"
+                    android:layout_toRightOf="@+id/textNetwork"/>
+
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardElevation="15dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="35dp"
+            app:cardBackgroundColor="#b689f1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/start_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:background="@android:color/transparent"
+                android:text="Start Location Service"
+                android:textColor="#fff"
+                />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardElevation="15dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="35dp"
+            app:cardBackgroundColor="#b689f1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/stop_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:background="@android:color/transparent"
+                android:text="Stop Service"
+                android:textColor="#fff"
+                />
+
+        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

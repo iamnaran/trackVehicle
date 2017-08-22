@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.ved.veddriver.DriverActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/button_driver"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:background="@drawable/driver"
+                android:contentDescription="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/service_indicator"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/circle"
+                android:contentDescription="@string/app_name" />
+
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        app:cardElevation="15dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="35dp"
+        app:cardBackgroundColor="#b689f1"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_calculate"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:background="@android:color/transparent"
+            android:text="START SERVICE"
+            android:textColor="#fff"
+            />
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        app:cardElevation="15dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="35dp"
+        app:cardBackgroundColor="#b689f1"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_Stop"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:background="@android:color/transparent"
+            android:text="STOP SERVICE"
+            android:textColor="#fff"
+            />
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+</LinearLayout>
