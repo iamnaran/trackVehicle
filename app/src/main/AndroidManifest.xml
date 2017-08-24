@@ -18,8 +18,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.DriverActivity">
 
-        <activity android:name=".DriverActivity">
+        </activity>
+
+        <service
+            android:name=".Service.LocationUpdateService"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".Notification.NotificationPublisher"
+            android:enabled="true"
+            android:exported="true"
+            android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Activity.LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,31 +50,6 @@
             </intent-filter>
 
         </activity>
-
-        <service
-            android:name="com.ved.veddriver.Service.LocationUpdateService"
-            android:exported="true"
-            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
-            <intent-filter>
-                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
-            </intent-filter>
-        </service>
-        <service android:name=".Service.CheckTimeDateService" />
-
-
-
-        <receiver
-            android:name=".Notification.NotificationPublisher"
-            android:enabled="true"
-            android:exported="true"
-            android:protectionLevel= "signature" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-
-        </receiver>
-
     </application>
 
 </manifest>

@@ -2,7 +2,6 @@ package com.ved.veddriver.Service;
 
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,14 +31,6 @@ public class LocationUpdateService extends GcmTaskService {
 
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-
-        Toast.makeText(getApplicationContext(), " Location Update Service ", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
     public int onRunTask(TaskParams taskParams) {
 
         if (!TextUtils.isEmpty(latitude) && !TextUtils.isEmpty(longitude)){
@@ -59,7 +50,7 @@ public class LocationUpdateService extends GcmTaskService {
         final String destLat = lat;
         final String destLog = log;
 
-        final int id = 1;
+        final String id = "1";
 
         Log.e(TAG, "sendToServer: " + destLat);
         Log.e(TAG, "sendToServer: " + destLog);
@@ -81,7 +72,7 @@ public class LocationUpdateService extends GcmTaskService {
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<String, String>();
-                params.put(Constants.KEY_ID, String.valueOf(id));
+                params.put(Constants.KEY_ID, id);
                 params.put(Constants.KEY_LAT, destLat);
                 params.put(Constants.KEY_LOG, destLog);
                 return params;

@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.ved.veddriver.DriverActivity;
+import com.ved.veddriver.Activity.DriverActivity;
 
 import static android.content.ContentValues.TAG;
 
@@ -40,13 +40,8 @@ public class NotificationUtils {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureMilli, pendingIntent);
 
-
-        //  am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-        // To cancel an alarm - pass the pending intent to cancel
-        //alarmManager.cancel(pendingIntent);
-
-
     }
+
 
     public static Notification generateNotification(Context context, String title, String body) {
 
@@ -58,8 +53,7 @@ public class NotificationUtils {
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .build();
-
-
     }
+
 
 }

@@ -1,99 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.ved.veddriver.DriverActivity">
+    android:orientation="vertical"
+    android:id="@+id/coordinatorLayout"
+    tools:context="com.ved.veddriver.Activity.DriverActivity">
 
 
-    <LinearLayout
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginBottom="25dp"
-        >
+        android:layout_height="match_parent">
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button_driver"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:background="@drawable/driver"
-                android:contentDescription="@string/app_name" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/service_indicator"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/circle"
-                android:contentDescription="@string/app_name" />
+                <ImageView
+                    android:id="@+id/gps_status"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/gps_status" />
 
+                <ImageView
+                    android:id="@+id/imageCompass"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/navigation"
+                    android:contentDescription="@string/app_name" />
 
+                <ImageView
+                    android:id="@+id/service_indicator"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:elevation="20dp"
+                    android:src="@mipmap/circle"
+                    android:tint="#e48282" />
 
-
-        </FrameLayout>
-
-
-    </LinearLayout>
-
-
-
-    <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
-        app:cardElevation="15dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginTop="35dp"
-        app:cardBackgroundColor="#b689f1"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/button_calculate"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="15dp"
-            android:background="@android:color/transparent"
-            android:text="START SERVICE"
-            android:textColor="#fff"
-            />
-
-    </android.support.v7.widget.CardView>
+                <ImageView
+                    android:id="@+id/network_status"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right|top|bottom"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/shadow"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/network_status" />
 
 
-    <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
-        app:cardElevation="15dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginTop="35dp"
-        app:cardBackgroundColor="#b689f1"
-        android:layout_height="wrap_content">
+            </FrameLayout>
 
-        <Button
-            android:id="@+id/button_Stop"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="15dp"
-            android:background="@android:color/transparent"
-            android:text="STOP SERVICE"
-            android:textColor="#fff"
-            />
-
-    </android.support.v7.widget.CardView>
+            <!--<Button-->
+                <!--android:id="@+id/button_Stop"-->
+                <!--android:layout_width="160dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_margin="30dp"-->
+                <!--android:text="STOP SERVICE"-->
+                <!--android:textColor="#fff" />-->
 
 
+        </LinearLayout>
 
 
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center|bottom"
+        android:text="START SERVICE"
+        android:background="@drawable/button_shape"
+        android:layout_margin="50dp"
+        android:textColor="#fff" />
 
-</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

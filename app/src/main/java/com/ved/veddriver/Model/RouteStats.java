@@ -7,6 +7,7 @@ package com.ved.veddriver.Model;
 public class RouteStats {
 
     private String auth_code;
+    private String route_id;
     private String startDateMorning;
     private String endDateMorning;
     private String startDateEvening;
@@ -15,12 +16,21 @@ public class RouteStats {
     public RouteStats() {
     }
 
-    public RouteStats(String auth_code, String startDateMorning, String endDateMorning, String startDateEvening, String endDateEvening) {
+    public RouteStats(String auth_code, String route_id, String startDateMorning, String endDateMorning, String startDateEvening, String endDateEvening) {
         this.auth_code = auth_code;
+        this.route_id = route_id;
         this.startDateMorning = startDateMorning;
         this.endDateMorning = endDateMorning;
         this.startDateEvening = startDateEvening;
         this.endDateEvening = endDateEvening;
+    }
+
+    public String getRoute_id() {
+        return route_id;
+    }
+
+    public void setRoute_id(String route_id) {
+        this.route_id = route_id;
     }
 
     public String getAuth_code() {
